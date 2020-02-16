@@ -4562,10 +4562,10 @@ grouped-queue@^1.0.0:
   dependencies:
     lodash "^4.17.15"
 
-growl@1.9.2:
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/growl/-/growl-1.9.2.tgz#0ea7743715db8d8de2c5ede1775e1b45ac85c02f"
-  integrity sha1-Dqd0NxXbjY3ixe3hd14bRayFwC8=
+growl@^1.10.5:
+  version "1.10.5"
+  resolved "https://registry.yarnpkg.com/growl/-/growl-1.10.5.tgz#f2735dc2283674fa67478b10181059355c369e5e"
+  integrity sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==
 
 gulp-if@^2.0.2:
   version "2.0.2"
@@ -6056,7 +6056,6 @@ mocha@^3.4.2:
     diff "3.2.0"
     escape-string-regexp "1.0.5"
     glob "7.1.1"
-    growl "1.9.2"
     he "1.1.1"
     json3 "3.3.2"
     lodash.create "3.1.1"
