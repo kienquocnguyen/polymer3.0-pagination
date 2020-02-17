@@ -1,4 +1,4 @@
-# Polymer 3.0 Submit Form Example
+# Polymer 3.0 Pagination Example
 
 #### Thanks to "Polymer App Toolbox - Starter Kit" demo
 
@@ -9,7 +9,7 @@ https://github.com/Polymer/polymer-starter-kit
 
 ## Setup
 Before run this project, you should also clone my api project
-https://github.com/kienquocnguyen/nodejs-submitapi
+https://github.com/kienquocnguyen/nodejs-paginationapi
 
 ### Install
 
@@ -101,15 +101,28 @@ So I have to use components app-location to change the url every time user switc
 
 #### 9. Define all of variable necessary in _currentPageChange
 
-_ location = this.$.location (elements app-location with id location)
-_ this.page = c (c is the current page value)
+_ location = this.$.location (elements app-location with id location)\
+_ this.page = c (c is the current page value)\
 _ params = this.queryParams (is the properties queryParams)
 
 ![pagination17](https://user-images.githubusercontent.com/33189395/74646714-eff11380-51ac-11ea-8335-e366d13d95f8.jpg)
 
 #### 10. Functional
 
-The first "if" is if this.page (current page) not euqals to 1 params will use 2 pow this.page.
+The first "if" is if this.page (current page) not euqals to 1.
+_ change the location (url) from view1 to view1/this.page
+_ params will use 2 to the power of this.page
+_ set the params in the api so it can offset how many item that we want.
+Example: if current page is number 2 then params would be 4 .
+So if current page is 2 I will skip 4 movies and move to the next 4 movies.
+And change the location (url) from view1 to view1/2
+
+![pagination18](https://user-images.githubusercontent.com/33189395/74646908-49f1d900-51ad-11ea-8e3e-f566ddccb446.jpg)
+
+Then "else" (current page is 1) I don't need to skip any movies so params would be zero and the location (url) would change to the view1/1
+
+![pagination19](https://user-images.githubusercontent.com/33189395/74650067-73adfe80-51b3-11ea-8ddd-009fc2300430.jpg)
+
 
 ## Final Results
 
