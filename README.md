@@ -1,62 +1,122 @@
-# Polymer 3.0 Fetch Api Example
+# Polymer 3.0 Submit Form Example
 
 #### Thanks to "Polymer App Toolbox - Starter Kit" demo
 
 In my project i clone this demo to use it as an appereance of this project.
 https://github.com/Polymer/polymer-starter-kit
 
+#### WARNING: For better understanding about this project you should have knowledge about Nodejs and Xampp.
+
 ## Setup
+Before run this project, you should also clone my api project
+https://github.com/kienquocnguyen/nodejs-submitapi
 
 ### Install
 
-After you clone "Polymer Fetch Api Example" as an demo you need to install it with yarn
+After you clone "Polymer 3.0 Submit Form Example" as an demo you need to install it with yarn
 
     yarn install
-
+    
+    
 ## Overview
 
 After install you need to run command yarn start to start the project.
 
     yarn start
 
-
 #### In Source Code
-![Untitled](https://user-images.githubusercontent.com/33189395/64028084-33f34c00-cb6c-11e9-970c-d2a9a29ddaac.png)
+![pagination1](https://user-images.githubusercontent.com/33189395/74640413-1c536280-51a2-11ea-86ec-2034542192b7.jpg)
 
 #### In Browser
-![Untitled2](https://user-images.githubusercontent.com/33189395/64028433-dd3a4200-cb6c-11e9-9ca2-c0ac32bd4298.png)
+![pagination2](https://user-images.githubusercontent.com/33189395/74640454-25dcca80-51a2-11ea-8040-d6419cf8973b.jpg)
 
 ## How It's Work
 
-#### 1. Dummy Api
-In this project i've used an dummy api provided by facebook.
+#### 1. API
+In this project i've used my "Nodejs Pagination API" and this is how the api look.
 
-![Untitled1](https://user-images.githubusercontent.com/33189395/64029547-06f46880-cb6f-11e9-803c-8de6af04a5b2.png)
+![pagination3](https://user-images.githubusercontent.com/33189395/74640589-5f153a80-51a2-11ea-8f95-996d65595c6b.jpg)
 
-#### 2. First i created a component "MyMovies" in my-movies.js
+This is the api for get data with pagination.
 
-![Untitled3](https://user-images.githubusercontent.com/33189395/64028995-ea0b6580-cb6d-11e9-90cc-fdb183a83811.png)
+![pagination4](https://user-images.githubusercontent.com/33189395/74640680-88ce6180-51a2-11ea-8669-2e7ff9d5261e.jpg)
+
+In this api I've set limit 4 item for each time that we call it which mean it would be 4 movies per page. Moreover, I also set a param name "offset" so later I can use it to skip 4 first item to go to the next page.
+
+![pagination6](https://user-images.githubusercontent.com/33189395/74641809-79e8ae80-51a4-11ea-973b-804d1618386c.jpg)
+
+This is the api for count how many movies to count how many page that I'm gonna display.
+Example: 4 moives/1 page || 8 movies/2 pages
+
+![pagination5](https://user-images.githubusercontent.com/33189395/74640903-ee225280-51a2-11ea-84d1-9be2583f308a.jpg)
+
+
+#### 2. First i created a page name mymovies.js
+
+![pagination7](https://user-images.githubusercontent.com/33189395/74643261-01cfb800-51a7-11ea-9bfa-85234a087b3f.jpg)
 
 #### 3. Then i used the connectedCallback function to fetch api
 _connectedCallback: Called when the element is added to a document. Can be called multiple times during the lifetime of an element.
-![Untitled4](https://user-images.githubusercontent.com/33189395/64031459-a6ffc100-cb72-11e9-9731-e6559bac8927.png)
+To understand more about how fetch api work. I suggest you to visit my blog about it.
+Link: https://mypolymerblog.com/single-post/?post=polymer-3.0-fetch-api
 
-#### 4. I defined each of api items is "mymovies"
-![Untitled5](https://user-images.githubusercontent.com/33189395/64031794-59378880-cb73-11e9-9d3e-e33a5de64a4f.png)
+![pagination8](https://user-images.githubusercontent.com/33189395/74643449-4d826180-51a7-11ea-8689-637d0a65c093.jpg)
 
-#### 5. In this api i used "movies" body as an api item.
-![Untitled6](https://user-images.githubusercontent.com/33189395/64031920-a3206e80-cb73-11e9-8b11-d34c28e6e0d1.png)
+Since I don't want it skip any movies in the first time display so my api have params = 0
+http://localhost:3000/movies/0
 
-#### 6. Call api to movies body.
-![Untitled7](https://user-images.githubusercontent.com/33189395/64032009-ccd99580-cb73-11e9-888f-f353dbbf3128.png)
+![pagination9](https://user-images.githubusercontent.com/33189395/74643874-047edd00-51a8-11ea-96d6-c07d36fdc55d.jpg)
 
-#### 7. Finally used dom-repeat to array all of the items.
-![Untitled8](https://user-images.githubusercontent.com/33189395/64032111-f85c8000-cb73-11e9-85fa-9fced12e9ff4.png)
+I also fetch another moviescount api to count how many movies in the data.
 
+![pagination10](https://user-images.githubusercontent.com/33189395/74644196-84a54280-51a8-11ea-95f9-44885ff97874.jpg)
+
+#### 4. I used dom-repeat to display all of the movies
+
+![pagination11](https://user-images.githubusercontent.com/33189395/74644572-0f863d00-51a9-11ea-89e9-a318d9e6d230.jpg)
+
+#### 5. Then I also used "paper-pagination" components to build our pagination.
+
+You can learn more about this components in here:
+https://www.webcomponents.org/element/@fluidnext-polymer/paper-pagination
+
+I used dom-repeat to display total movies in "total-items" property and set "item-per-page" = 4. In my data I have 10 movies so we will have 3 pages.
+
+![pagination12](https://user-images.githubusercontent.com/33189395/74645070-dc907900-51a9-11ea-9399-672c0c72f18a.jpg)
+
+![pagination13](https://user-images.githubusercontent.com/33189395/74645220-16617f80-51aa-11ea-8ec6-c97fe29a2d56.jpg)
+
+#### 6. I created an observer to get current page value every time we change the page.
+
+![pagination14](https://user-images.githubusercontent.com/33189395/74645399-6f311800-51aa-11ea-88c4-fed3dd20627d.jpg
+
+#### 7. In client page I want it to have a params for the user to know which page that they are standing.
+So I have to use components app-location to change the url every time user switch their page.
+
+![pagination15](https://user-images.githubusercontent.com/33189395/74645950-7278d380-51ab-11ea-95dc-b60fb036aac0.jpg)
+
+#### 8. Set a variable this.page = 0 in constructor as a static variable and a properties querryParams
+
+![pagination16](https://user-images.githubusercontent.com/33189395/74646297-224e4100-51ac-11ea-912b-dac20be06160.jpg)
+
+#### 9. Define all of variable necessary in _currentPageChange
+
+_ location = this.$.location (elements app-location with id location)
+_ this.page = c (c is the current page value)
+_ params = this.queryParams (is the properties queryParams)
+
+![pagination17](https://user-images.githubusercontent.com/33189395/74646714-eff11380-51ac-11ea-8335-e366d13d95f8.jpg)
+
+#### 10. Functional
+
+The first "if" is if this.page (current page) not euqals to 1 params will use 2 pow this.page.
 
 ## Final Results
 
-![Untitled9](https://user-images.githubusercontent.com/33189395/64032171-17f3a880-cb74-11e9-94a0-ef7a159b8791.png)
+![submit-post22](https://user-images.githubusercontent.com/33189395/74583384-28e88700-4ff9-11ea-99c9-691c0c99d2f5.jpg)
+
+![submit-post23](https://user-images.githubusercontent.com/33189395/74583386-2b4ae100-4ff9-11ea-9bf0-9f9446d5db19.jpg)
 
 
 ### Hope you enjoy my work :D
+
