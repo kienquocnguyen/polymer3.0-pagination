@@ -126,10 +126,7 @@ Then "else" (current page is 1) I don't need to skip any movies so params would 
 
 ## Final Results
 
-![submit-post22](https://user-images.githubusercontent.com/33189395/74583384-28e88700-4ff9-11ea-99c9-691c0c99d2f5.jpg)
-
-![submit-post23](https://user-images.githubusercontent.com/33189395/74583386-2b4ae100-4ff9-11ea-9bf0-9f9446d5db19.jpg)
-
+![pagination2](https://user-images.githubusercontent.com/33189395/74640454-25dcca80-51a2-11ea-8040-d6419cf8973b.jpg)
 
 ### Hope you enjoy my work :D
 
