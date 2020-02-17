@@ -88,7 +88,7 @@ I used dom-repeat to display total movies in "total-items" property and set "ite
 
 #### 6. I created an observer to get current page value every time we change the page.
 
-![pagination14](https://user-images.githubusercontent.com/33189395/74645399-6f311800-51aa-11ea-88c4-fed3dd20627d.jpg
+![pagination14](https://user-images.githubusercontent.com/33189395/74650130-9b9d6200-51b3-11ea-9656-1ba57ffb8640.jpg)
 
 #### 7. In client page I want it to have a params for the user to know which page that they are standing.
 So I have to use components app-location to change the url every time user switch their page.
@@ -109,12 +109,12 @@ _ params = this.queryParams (is the properties queryParams)
 
 #### 10. Functional
 
-The first "if" is if this.page (current page) not euqals to 1.
-_ change the location (url) from view1 to view1/this.page
-_ params will use 2 to the power of this.page
-_ set the params in the api so it can offset how many item that we want.
-Example: if current page is number 2 then params would be 4 .
-So if current page is 2 I will skip 4 movies and move to the next 4 movies.
+The first "if" is if this.page (current page) not euqals to 1.\
+_ change the location (url) from view1 to view1/this.page\
+_ params will use 2 to the power of this.page\
+_ set the params in the api so it can offset how many item that we want.\
+Example: if current page is number 2 then params would be 4 .\
+So if current page is 2 I will skip 4 movies and move to the next 4 movies.\
 And change the location (url) from view1 to view1/2
 
 ![pagination18](https://user-images.githubusercontent.com/33189395/74646908-49f1d900-51ad-11ea-8e3e-f566ddccb446.jpg)
