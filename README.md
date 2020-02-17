@@ -45,7 +45,7 @@ In this api I've set limit 4 item for each time that we call it which mean it wo
 
 ![pagination6](https://user-images.githubusercontent.com/33189395/74641809-79e8ae80-51a4-11ea-973b-804d1618386c.jpg)
 
-This is the api for count how many movies to count how many page that I'm gonna display.
+This is the api for count how many movies to count how many page that I'm gonna display.\
 Example: 4 moives/1 page || 8 movies/2 pages
 
 ![pagination5](https://user-images.githubusercontent.com/33189395/74640903-ee225280-51a2-11ea-84d1-9be2583f308a.jpg)
